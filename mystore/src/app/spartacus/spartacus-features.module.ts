@@ -13,6 +13,8 @@ import { CartImportExportFeatureModule } from './features/cart/cart-import-expor
 import { OrderFeatureModule } from './features/order/order-feature.module';
 import { CheckoutFeatureModule } from './features/checkout/checkout-feature.module';
 import { AsmFeatureModule } from './features/asm/asm-feature.module';
+import { MyClockModule } from './features/mini-cart/my-clock.module';
+import { MyClockComponent } from './features/mini-cart/components/my-clock/my-clock.component';
 
 @NgModule({
   declarations: [],
@@ -71,7 +73,7 @@ import { AsmFeatureModule } from './features/asm/asm-feature.module';
     CartComponentModule,
     WishListModule,
     CostCenterOccModule,
-    // Order,
+    // Order
     OrderOccModule,
     // Page Events,
     NavigationEventModule,
@@ -92,6 +94,7 @@ import { AsmFeatureModule } from './features/asm/asm-feature.module';
     OrderFeatureModule,
     CheckoutFeatureModule,
     AsmFeatureModule,
+    MyClockModule
   ]
 })
 export class SpartacusFeaturesModule { }
