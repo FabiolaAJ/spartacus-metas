@@ -6,7 +6,13 @@ import { defaultCmsContentProviders, layoutConfig, mediaConfig } from "@spartacu
 @NgModule({
   declarations: [],
   imports: [
- 
+    ConfigModule.withConfig({
+      routing: {
+          routes: {
+              product: { paths: ['p/:productCode/:name'] }
+          }
+      }
+  })
   ],
   providers: [provideConfig(layoutConfig), provideConfig(mediaConfig), ...defaultCmsContentProviders, provideConfig(<OccConfig>{
     backend: {
