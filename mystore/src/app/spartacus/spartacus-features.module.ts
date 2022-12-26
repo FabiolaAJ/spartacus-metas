@@ -13,8 +13,7 @@ import { CartImportExportFeatureModule } from './features/cart/cart-import-expor
 import { OrderFeatureModule } from './features/order/order-feature.module';
 import { CheckoutFeatureModule } from './features/checkout/checkout-feature.module';
 import { AsmFeatureModule } from './features/asm/asm-feature.module';
-import { MyClockModule } from './features/mini-cart/my-clock.module';
-import { MyClockComponent } from './features/mini-cart/components/my-clock/my-clock.component';
+import { MyClockModule } from './features/clock/my-clock.module';
 
 @NgModule({
   declarations: [],
@@ -94,7 +93,7 @@ import { MyClockComponent } from './features/mini-cart/components/my-clock/my-cl
     OrderFeatureModule,
     CheckoutFeatureModule,
     AsmFeatureModule,
-    MyClockModule
+    MyClockModule,
   ]
 })
 export class SpartacusFeaturesModule { }

@@ -1,0 +1,19 @@
+<div class="background">
+    <ng-container *ngIf="(components$ | async) as components">
+        <ng-container
+        *ngIf="components.ProfileTagComponent"
+        [cxComponentWrapper]="components.ProfileTagComponent">
+      </ng-container>
+      
+        <ng-container *ngIf="components.FooterNavigationComponent">
+          <ng-container [cxComponentWrapper]="components.FooterNavigationComponent"></ng-container>
+        </ng-container>
+      
+        <section *ngIf="components.AnonymousConsentManagementBannerComponent" class="anonymous">
+          <ng-container [cxComponentWrapper]="components.AnonymousConsentManagementBannerComponent"></ng-container>
+        </section>
+      
+       
+    </ng-container>
+    
+</div>
