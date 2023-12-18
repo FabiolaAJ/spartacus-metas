@@ -32,7 +32,9 @@
       box-shadow: var(--cx-box-shadow);
     }
   }
-
+  cx-carousel .slides .item a{
+    color: var(--cx-color-dark)!important;
+  }
   cx-site-context-selector {
     select {
       background-color: var(--cx-color-background)!important;
@@ -47,6 +49,7 @@
     }
   }
 
+  
   header {
     background-color: var(--cx-color-background)!important;
 
@@ -125,7 +128,9 @@
       }
     }
   }
-
+  cx-anonymous-consent-management-banner div{
+    color: var(--cx-color-dark);
+  }
   cx-add-to-saved-cart-container {
     .cx-action-link {
       color: var(--cx-color-primary);

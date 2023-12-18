@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <div *ngIf="bestsProducts$">
+        <div class="d-flex justify-content-center p-5" >
+            <app-best-product  *ngFor="let product of bestsProducts$ | async; let i = index" [product]="product" (productReview)="showReview($event)"></app-best-product>
+        </div>
+    </div>
+    <div *ngIf="reviews$">
+        <h2 class="cx-product-name text-center">{{productName}}</h2>
+        <app-product-comments *ngFor="let review of reviews$ | async; let i = index" [review]="review"></app-product-comments>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+
+<div class="col p-2 text-center" >
+    <img *ngIf="product.images" src="{{product.images.PRIMARY.product.url}}"/>
+    <div class="row"><div class="col-12"> <p class="pt-4"> {{product.name}}</p></div></div>
+    <div class="row"><div class="col-12 pb-3"><cx-star-rating [rating]="product.averageRating"></cx-star-rating></div></div>
+    <div class="row"><div class="col-12"><button *ngIf="product.code"  class="btn btn-primary justify-content-center " type="button" (click)="setCode(product.code, product.name)" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2" >Show reviews</button></div></div>
+</div>

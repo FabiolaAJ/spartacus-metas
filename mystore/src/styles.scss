@@ -2,4 +2,5 @@
 
 $styleVersion: 4.3;
 @import '~@spartacus/styles/index';
-@import './styles/themes/mytheme/mytheme.scss'
+@import './styles/themes/mytheme/mytheme.scss';
+@import '~@spartacus/styles/scss/theme/lambda/_variables.scss';

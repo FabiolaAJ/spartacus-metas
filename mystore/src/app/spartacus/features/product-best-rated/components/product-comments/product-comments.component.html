@@ -1,0 +1,11 @@
+
+<div class="container review mt-4 mb-4">
+    <div class="title">{{ review.headline }}</div>
+    <cx-star-rating [rating]="review.rating"></cx-star-rating>
+    <div class="name">
+      {{ review.alias ? review.alias : review.principal?.name }}
+    </div>
+    <div class="date">{{ review.date }}</div>
+    <div class="text">{{ review.comment }}</div>
+    <hr>
+</div>

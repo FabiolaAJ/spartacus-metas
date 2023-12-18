@@ -1,0 +1,3 @@
+INSERT_UPDATE SiteTheme; code[unique = true]; name[lang = en]
+                       ; mytheme            ; "MyTheme"
+

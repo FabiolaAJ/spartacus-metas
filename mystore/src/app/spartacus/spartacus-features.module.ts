@@ -14,6 +14,7 @@ import { SmartEditFeatureModule } from './features/smartedit/smart-edit-feature.
 import { StoreFinderFeatureModule } from './features/storefinder/store-finder-feature.module';
 import { PersonalizationFeatureModule } from './features/tracking/personalization-feature.module';
 import { UserFeatureModule } from './features/user/user-feature.module';
+import { ProductBestRatedModule } from './features/product-best-rated/product-best-rated.module';
 
 @NgModule({
   declarations: [],
@@ -94,6 +95,7 @@ import { UserFeatureModule } from './features/user/user-feature.module';
     CheckoutFeatureModule,
     AsmFeatureModule,
     MyClockModule,
+    ProductBestRatedModule
 
   ]
 })
