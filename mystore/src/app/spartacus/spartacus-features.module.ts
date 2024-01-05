@@ -8,13 +8,13 @@ import { CartSavedCartFeatureModule } from './features/cart/cart-saved-cart-feat
 import { CheckoutFeatureModule } from './features/checkout/checkout-feature.module';
 import { MyClockModule } from './features/clock/my-clock.module';
 import { OrderFeatureModule } from './features/order/order-feature.module';
+import { ProductBestRatedModule } from './features/product-best-rated/product-best-rated.module';
 import { ProductImageZoomFeatureModule } from './features/product/product-image-zoom-feature.module';
 import { ProductVariantsFeatureModule } from './features/product/product-variants-feature.module';
 import { SmartEditFeatureModule } from './features/smartedit/smart-edit-feature.module';
 import { StoreFinderFeatureModule } from './features/storefinder/store-finder-feature.module';
 import { PersonalizationFeatureModule } from './features/tracking/personalization-feature.module';
 import { UserFeatureModule } from './features/user/user-feature.module';
-import { ProductBestRatedModule } from './features/product-best-rated/product-best-rated.module';
 
 @NgModule({
   declarations: [],

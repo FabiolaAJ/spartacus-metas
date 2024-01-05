@@ -17,12 +17,12 @@ import { OrderRootModule, ORDER_FEATURE } from "@spartacus/order/root";
       },
     }
   }),
-  provideConfig(<I18nConfig>{
-    i18n: {
-      resources: orderTranslations,
-      chunks: orderTranslationChunksConfig,
-    },
-  })
+  // provideConfig(<I18nConfig>{
+  //   i18n: {
+  //     resources: orderTranslations,
+  //     chunks: orderTranslationChunksConfig,
+  //   },
+  // })
   ]
 })
 export class OrderFeatureModule { }

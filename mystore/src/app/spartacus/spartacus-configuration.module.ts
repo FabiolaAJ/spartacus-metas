@@ -6,6 +6,7 @@ import { defaultCmsContentProviders, layoutConfig, mediaConfig } from "@spartacu
 @NgModule({
   declarations: [],
   imports: [
+
     ConfigModule.withConfig({
       routing: {
         routes: {
@@ -16,46 +17,67 @@ import { defaultCmsContentProviders, layoutConfig, mediaConfig } from "@spartacu
 
 
   ],
-  providers: [provideConfig(layoutConfig), provideConfig(mediaConfig), ...defaultCmsContentProviders, provideConfig(<OccConfig>{
-    backend: {
-      occ: {
-        baseUrl : 'https://localhost:9002/'
+  providers: [
+    provideConfig(layoutConfig),
+    provideConfig(mediaConfig),
+    ...defaultCmsContentProviders,
+    provideConfig(<OccConfig>{
+      backend: {
+        occ: {
+          baseUrl: 'https://localhost:9002/'
+        }
+      },
+    }),
+
+    provideConfig(<I18nConfig>{
+      i18n: {
+        resources: translations,
+        chunks: translationChunksConfig,
+        fallbackLang: 'en',
+
+      },
+    }), provideConfig(<FeaturesConfig>{
+      features: {
+        level: '4.3',
+        consignmentTracking: true
+
       }
-    },
-  }), provideConfig(<SiteContextConfig>{
-    context: {
-      currency: ['USD'],
-      language: ['en'],
-    },
-  }), provideConfig(<I18nConfig>{
-    i18n: {
-      resources: translations,
-      chunks: translationChunksConfig,
-      fallbackLang: 'en',
-
-    },
-  }), provideConfig(<FeaturesConfig>{
-    features: {
-      level: '4.3',
-      consignmentTracking: true
-
-    }
-  }), provideConfig(<SiteContextConfig>{
-    context: {
-      currency: ['USD'],
-      language: ['en'],
-      baseSite: ['electronics-spa'],
-    },
-  }), provideConfig(<I18nConfig>{
-    i18n: {
-      resources: translations,
-      chunks: translationChunksConfig,
-      fallbackLang: 'en'
-    },
-  }), provideConfig(<FeaturesConfig>{
-    features: {
-      level: '4.3'
-    }
-  })]
+    }), provideConfig({
+      context: {
+        baseSite: ['electronics-spa'],
+        currency: ['USD'],
+        language: ['en'],
+      },
+    }), provideConfig(<I18nConfig>{
+      i18n: {
+        resources: translations,
+        chunks: translationChunksConfig,
+        fallbackLang: 'en'
+      },
+    }), provideConfig(<FeaturesConfig>{
+      features: {
+        level: '4.3'
+      }
+    }), provideConfig(<OccConfig>{
+      backend: {
+        occ: {
+          baseUrl: 'https://localhost:9002/'
+        }
+      },
+    }),
+    provideConfig(<OccConfig>{
+      backend: {
+        occ: {
+          baseUrl: 'https://localhost:9002',
+        }
+      },
+    }),
+    provideConfig(<SiteContextConfig>{
+      context: {
+        currency: ['USD'],
+        language: ['en'],
+      },
+    })
+  ]
 })
 export class SpartacusConfigurationModule { }
