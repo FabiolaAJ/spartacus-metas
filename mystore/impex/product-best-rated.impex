@@ -5,17 +5,18 @@ $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCa
 INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]; name                        ; masterTemplate(uid, $contentCV); label         ; defaultPage[default = 'true']; title[lang = en]; approvalStatus(code)[default = 'approved']; homepage[default = 'false']; restrictions(uid, $contentCV)
                          ;                          ; bestRatedPage     ; Products - Best Rated       ; ContentPage1Template           ; best-rated     ;                              ;Products - Best Rated       ;                                           ;                            ; 
 
+INSERT_UPDATE CMSFlexComponent;$contentCV[unique=true];uid[unique=true]     ;name                    ;flexType             
+                              ;                       ;ProductsBestComponent;Return Text product best;ProductsBestComponent
 
-INSERT_UPDATE CMSFlexComponent;$contentCV[unique=true];uid[unique=true];name;flexType;&componentRef
-;;ProductsBestComponent;Return Text product best;ProductsBestComponent;ProductsBestComponent
+INSERT_UPDATE CMSFlexComponent;$contentCV[unique=true];uid[unique=true]            ;name                             ;flexType                    ;
+                              ;                       ;ProductBestCommentsComponent;Return Text product best comments;ProductBestCommentsComponent;
 
-INSERT_UPDATE CMSFlexComponent;$contentCV[unique=true];uid[unique=true];name;flexType;&componentRef
-;;ProductBestCommentsComponent;Return Text product best comments;ProductBestCommentsComponent;ProductBestCommentsComponent
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]             ;name                                        ;active;cmsComponents(uid,$contentCV)                       ;
+                         ;                       ;BodyContentSlot-bestratedpage;Body Content Slot for Return Best Rated Page;true  ; ProductsBestComponent, ProductBestCommentsComponent;
 
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]             ;position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ;BodyPageContent-bestratedpage;BodyContent          ;bestRatedPage                    ;BodyContentSlot-bestratedpage
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
-;;BodyContentSlot-bestratedpage;Body Content Slot for Return Best Rated Page;true; ProductsBestComponent, ProductBestCommentsComponent;
-
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]     ;position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true]
-                                ;                       ;BodyPageContent-bestratedpage;BodyContent          ;bestRatedPage                        ;BodyContentSlot-bestratedpage
-
+## Quando criar nova position no contentSlotForPage é necessario criar um contentSlotName##
+#INSERT_UPDATE ContentSlotName;name[unique=true] ;template(uid,$contentCV)[unique=true][default='LandingPage2Template'] ;compTypeGroup(code)  ;
+#                             ; Section3A        ;                                                                      ;wide                 ;
